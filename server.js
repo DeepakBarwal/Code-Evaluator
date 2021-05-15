@@ -45,6 +45,6 @@ app.get('/' (req, res) => {
   res.redirect('/eval');
 }
 
-app.listen(3333, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log('http://localhost:3333');
 });
