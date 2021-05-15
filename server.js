@@ -41,6 +41,10 @@ app.get('/eval', decryptQueryParams, decodeQueryBase64, (req, res) => {
   res.send(eval(`${req.query.code}`).toString());
 });
 
+app.get('/' (req, res) => {
+  res.redirect('/eval');
+}
+
 app.listen(3333, () => {
   console.log('http://localhost:3333');
 });
