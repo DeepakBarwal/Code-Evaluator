@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const port = process.env.PORT || 3333;
+
 app.use('/', express.static(__dirname + '/public'));
 
 function decryptQueryParams(req, res, next) {
@@ -45,6 +47,6 @@ app.get('/' (req, res) => {
   res.redirect('/eval');
 }
 
-app.listen(process.env.PORT || 3333, () => {
-  console.log('http://localhost:3333');
+app.listen(port, () => {
+  console.log(`http://localhost:${port}`);
 });
