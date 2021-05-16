@@ -39,8 +39,14 @@ function decodeQueryBase64(req, res, next) {
 }
 
 app.get('/eval', decryptQueryParams, decodeQueryBase64, (req, res) => {
-  //   let result = eval(`${req.query.code}`);
-  res.send(eval(`${req.query.code}`).toString());
+  try {
+    var result = eval(`${req.query.code}`).toString();
+  } catch (e) {
+    res.send(
+      '<h1>Error! Please Enter Valid JS supported by eval function</h1>'
+    );
+  }
+  res.send(`<h1>${result}</h1>`);
 });
 
 app.get('/', (req, res) => {

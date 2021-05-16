@@ -4,19 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Base64</title>
+    <link rel="stylesheet" href="style.css" />
     <script async defer src="script.js"></script>
   </head>
   <body>
-    <h1>Code Evaluator</h1>
-    <textarea id="inpCode" rows="6" cols="50"></textarea>
-    <br />
-    <button id="btnEncode">ENCODE</button>
-    <br />
-    <button id="btnEncrypt">ENCRYPT</button>
-    <br />
-    <form action="/eval" method="GET">
-      <input style="width: 500px" type="text" name="code" id="code" />
-      <button type="submit">EVALUATE</button>
-    </form>
+    <div class="container">
+      <h1 class="heading">Code Evaluator</h1>
+      <label for="inpCode" class="prompt"
+        >Enter valid Javascript eval() executable code here
+      </label>
+      <br />
+      <br />
+      <textarea id="inpCode" rows="6" cols="50"></textarea>
+      <br />
+      <button class="btn encode" id="btnEncode">ENCODE</button>
+      <button class="btn encrypt" id="btnEncrypt">ENCRYPT</button>
+      <br />
+      <form action="/eval" method="GET">
+        <input style="width: 500px" type="text" name="code" id="code" />
+        <br />
+        <br />
+        <button class="btn submit" type="submit">EVALUATE</button>
+      </form>
+    </div>
   </body>
 </html>
